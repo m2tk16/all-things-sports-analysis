@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "allthingssportsanaly9d79a93b": {}
+      },
+      "api": {
+        "allthingssportsanaly": {}
+      },
+      "storage": {
+        "s3a8124fa1": {}
       }
     }
   }

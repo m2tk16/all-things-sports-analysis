@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3a8124fa1",
+  "policyUUID": "a8124fa1",
+  "bucketName": "allthingssportsanalyfaf175f0b5c0474ebb17959873b",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
