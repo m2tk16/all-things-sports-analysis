@@ -104,4 +104,5 @@ const App = ({ signOut }) => {
   );
 };
 
+
 export default withAuthenticator(App);
