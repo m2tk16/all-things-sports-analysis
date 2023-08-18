@@ -18,6 +18,7 @@ import {
 } from "./graphql/mutations";
 
 const App = ({ signOut }) => {
+  {/*
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -102,6 +103,7 @@ const App = ({ signOut }) => {
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
+  */}
 };
 
 
