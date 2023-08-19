@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import  styles from './Navbar.module.css';
-
+import {
+    Button
+  } from "@aws-amplify/ui-react";
+  
 function Nav() {
   // adding the states 
   const [isActive, setIsActive] = useState(false);

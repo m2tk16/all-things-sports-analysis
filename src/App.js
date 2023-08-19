@@ -20,7 +20,10 @@ import {
 
 const App = ({ signOut }) => {
   return (
-    <Nav/>
+    <View className="App">
+      <Button onClick={signOut}>Sign Out</Button>
+      <Nav></Nav>
+    </View>
   )
   {/*
   const [notes, setNotes] = useState([]);
