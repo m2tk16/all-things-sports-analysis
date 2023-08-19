@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import  styles from './Navbar.module.css';
 
-function Navbar() {
+function Nav() {
   // adding the states 
   const [isActive, setIsActive] = useState(false);
 
@@ -22,20 +22,20 @@ function Navbar() {
         <nav className={`${styles.navbar}`}>
 
           {/* logo */}
-          <a href='#home' className={`${styles.logo}`}>Dev. </a>
+          <a href='#home' className={`${styles.logo}`}>ATSA</a>
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
               <a href='#home' className={`${styles.navLink}`}>Home</a>
             </li>
             <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>Catalog</a>
+              <a href='#player-stats' className={`${styles.navLink}`}>Player Stats</a>
             </li>
             <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>All products</a>
+              <a href='#team-stats' className={`${styles.navLink}`}>Team Stats</a>
             </li>
             <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>Contact</a>
+              <a href='#analysis' className={`${styles.navLink}`}>Analysis</a>
             </li>
           </ul>
 
@@ -51,4 +51,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Nav;

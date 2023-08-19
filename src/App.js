@@ -11,6 +11,7 @@ import {
   View,
   withAuthenticator,
 } from "@aws-amplify/ui-react";
+import Nav from "./Navbar"
 import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
@@ -18,6 +19,9 @@ import {
 } from "./graphql/mutations";
 
 const App = ({ signOut }) => {
+  return (
+    <Nav/>
+  )
   {/*
   const [notes, setNotes] = useState([]);
 
