@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
+import Home from "./Home"
+import Players from "./PlayerStats"
+import Teams from "./TeamStats"
+import Fantasy from "./Fantasy"
+import Optimizer from "./Optimizer"
+import Parlay from "./Parlay"
 import { API } from "aws-amplify";
 import {
   Button,
@@ -20,11 +27,26 @@ import {
 
 const App = ({ signOut }) => {
   return (
-    <View className="App">
-      <Button onClick={signOut}>Sign Out</Button>
-      <Nav></Nav>
+    <Router>
+      <View className="App">
+        <Button onClick={signOut}>Sign Out</Button>
+        <Nav>
+          <Routes>
+            <Route exact path='/' element={<Home/>} />
+            <Route exact path='/player-stats' element={<Players/>} />
+            <Route exact path='/team-stats' element={<Teams/>} />
+            <Route exact path='/fantasy' element={<Fantasy/>} />
+            <Route exact path='/fanduel-optimizer' element={<Optimizer/>} />
+            <Route exact path='/parlay' element={<Parlay/>} />
+          </Routes>
+
+        </Nav>
     </View>
+    </Router>
   )
+
+
+
   {/*
   const [notes, setNotes] = useState([]);
 
