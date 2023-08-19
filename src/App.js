@@ -9,17 +9,10 @@ import Teams from "./TeamStats"
 import Fantasy from "./Fantasy"
 import Optimizer from "./Optimizer"
 import Parlay from "./Parlay"
-import { API } from "aws-amplify";
 import {
   Button,
-  Flex,
-  Heading,
-  Text,
-  TextField,
-  View,
   withAuthenticator,
 } from "@aws-amplify/ui-react";
-import Nav from "./Navbar_old"
 import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
@@ -47,8 +40,6 @@ const App = ({ signOut }) => {
   )
 
   
-
-
 
   {/*
   const [notes, setNotes] = useState([]);

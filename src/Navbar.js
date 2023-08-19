@@ -3,13 +3,11 @@ import { useState } from 'react';
 import {
   Nav,
   NavLink,
-  Bars,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
 } from './NavbarElements';
-import { Image, Text } from "@aws-amplify/ui-react";
 import  styles from './Navbar.module.css';
+
+
 const Navbar = () => {
       // adding the states 
   const [isActive, setIsActive] = useState(false);
@@ -25,13 +23,10 @@ const Navbar = () => {
   };
 
 
-
-
   return (
     <Nav className={`${styles.navBar}`}>
       <NavMenu className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
         <img className={`${styles.imgLogo}`} src="https://allthingssportsanalysis-images.s3.amazonaws.com/ATSA_logo_3.0.png"/>
-
         <NavLink to='/' className={`${styles.navLink}`} >Home</NavLink>
         <NavLink to='/player-stats' className={`${styles.navLink}`} >Player Stats</NavLink>
         <NavLink to='/team-stats' className={`${styles.navLink}`} >Team Stats</NavLink>
