@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
+import Navbar from './Navbar';
 import Home from "./Home"
 import Players from "./PlayerStats"
 import Teams from "./TeamStats"
@@ -18,32 +19,34 @@ import {
   View,
   withAuthenticator,
 } from "@aws-amplify/ui-react";
-import Nav from "./Navbar"
+import Nav from "./Navbar_old"
 import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
 
+
 const App = ({ signOut }) => {
   return (
-    <Router>
-      <View className="App">
-        <Button onClick={signOut}>Sign Out</Button>
-        <Nav>
-          <Routes>
-            <Route exact path='/' element={<Home/>} />
-            <Route exact path='/player-stats' element={<Players/>} />
-            <Route exact path='/team-stats' element={<Teams/>} />
-            <Route exact path='/fantasy' element={<Fantasy/>} />
-            <Route exact path='/fanduel-optimizer' element={<Optimizer/>} />
-            <Route exact path='/parlay' element={<Parlay/>} />
-          </Routes>
-
-        </Nav>
-    </View>
-    </Router>
+    <>
+      <Button onClick={signOut}>Sign Out</Button>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/player-stats' element={<Players />} />
+          <Route path='/team-stats' element={<Teams />} />
+          <Route path='/fantasy' element={<Fantasy />} />
+          <Route path='/fanduel-optimizer' element={<Optimizer />} />
+          <Route path='/parlay' element={<Parlay />} />
+        </Routes>
+      </Router>
+    </>
+    
   )
+
+  
 
 
 
