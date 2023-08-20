@@ -6,9 +6,7 @@ import {
   NavMenu,
 } from './NavbarElements';
 import  styles from './Navbar.module.css';
-import {
-  Text,
-} from "@aws-amplify/ui-react";
+
 
 const Navbar = () => {
       // adding the states 
@@ -41,10 +39,17 @@ const currentPath = () => {
   return path;
 }
 
+
+const teamData=()=>{
+  fetch('https://oj9lhmt5f5.execute-api.us-east-1.amazonaws.com/default')
+  .then(response=>response.json())
+  .then(data=>console.log(data))
+}
+
   return (
     <Nav className={`${styles.navBar}`}>
       <NavMenu className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
-        <img className={`${styles.imgLogo}`} src="https://allthingssportsanalysis-images.s3.amazonaws.com/ATSA_logo_3.0.png"/>
+        <img className={`${styles.imgLogo}`} src="https://allthingssportsanalysis-images.s3.amazonaws.com/ATSA_logo_3.0.png" onClick={teamData}/>
         <NavLink to='/' className={`${styles.navLink}`} onClick={removeActive} >Home</NavLink>
         <NavLink to='/player-stats' className={`${styles.navLink}`} onClick={removeActive} >Player Stats</NavLink>
         <NavLink to='/team-stats' className={`${styles.navLink}`} onClick={removeActive} >Team Stats</NavLink>
