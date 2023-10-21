@@ -1,69 +1,23 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  Nav,
-  NavLink,
-  NavMenu,
-} from './NavbarElements';
-import  styles from './Navbar.module.css';
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 
-const Navbar = () => {
-      // adding the states 
-  const [isActive, setIsActive] = useState(false);
-  const [tagValue, setTagValue] = useState('');
-
-  //add the active class
-  const toggleActiveClass = () => {
-    setIsActive(!isActive);
-    console.log(currentPath())
-  };
-
-  //clean up function to remove the active class
-  const removeActive = () => {
-    setIsActive(false)
-    console.log(currentPath())
-  };
-
-
-
-const currentPath = () => {
-  const value = ""
-  const path = window.location.pathname.replace("/", "").replace("-", " ")
-  if (path == "") {
-    const value = "Home"
-  }  else {
-    const value = path
-  }
-  console.log("Current path: " + path);
-  return path;
-}
-
-
-const teamData=()=>{
-  fetch('https://oj9lhmt5f5.execute-api.us-east-1.amazonaws.com/default')
-  .then(response=>response.json())
-  .then(data=>console.log(data))
-}
-
+function NavBar() {
   return (
-    <Nav className={`${styles.navBar}`}>
-      <NavMenu className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
-        <img className={`${styles.imgLogo}`} src="https://allthingssportsanalysis-images.s3.amazonaws.com/ATSA_logo_3.0.png" onClick={teamData}/>
-        <NavLink to='/' className={`${styles.navLink}`} onClick={removeActive} >Home</NavLink>
-        <NavLink to='/player-stats' className={`${styles.navLink}`} onClick={removeActive} >Player Stats</NavLink>
-        <NavLink to='/team-stats' className={`${styles.navLink}`} onClick={removeActive} >Team Stats</NavLink>
-        <NavLink to='/fantasy' className={`${styles.navLink}`}onClick={removeActive}  >Fantasy</NavLink>
-        <NavLink to='/fanduel-optimizer' className={`${styles.navLink}`} onClick={removeActive} >Fanduel Optimizer</NavLink>
-        <NavLink to='/parlay' className={`${styles.navLink}`} onClick={removeActive} >Parlay</NavLink>
-      </NavMenu>
-      <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
-        <span className={`${styles.bar}`}></span>
-        <span className={`${styles.bar}`}></span>
-        <span className={`${styles.bar}`}></span>
-      </div>
-    </Nav>
+    <Navbar 
+      collapseOnSelect expand="sm" 
+      variant="dark"
+      className="navbar"
+    >
+      <Container>
+        <Navbar.Brand href="/">Jarvis</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/settings">Settings</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
-  
-export default Navbar;
+}
+export default NavBar;

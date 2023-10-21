@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import Navbar from './Navbar';
+import NavBar from './Navbar';
 import Home from "./Home"
-import Players from "./PlayerStats"
-import Teams from "./TeamStats"
-import Fantasy from "./Fantasy"
-import Optimizer from "./Optimizer"
-import Parlay from "./Parlay"
+import Jarvis from "./Jarvis"
 import {
   Button,
   withAuthenticator,
@@ -18,25 +14,22 @@ import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/jquery/dist/jquery.min.js";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 const App = ({ signOut }) => {
   return (
-    <>
-      <Button onClick={signOut}>Sign Out</Button>
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route path='/' exact element={<Home />} />
-          <Route path='/player-stats' element={<Players />} />
-          <Route path='/team-stats' element={<Teams />} />
-          <Route path='/fantasy' element={<Fantasy />} />
-          <Route path='/fanduel-optimizer' element={<Optimizer />} />
-          <Route path='/parlay' element={<Parlay />} />
-        </Routes>
-      </Router>
-    </>
-    
+    <div className="app-body">
+        <Button onClick={signOut}>Sign Out</Button>
+        <Router>
+          <NavBar/>
+          <Routes>
+            <Route path='/' exact element={<Home />} />
+            <Route path='/jarvis' element={<Jarvis />} />
+          </Routes>
+        </Router>
+    </div>
   )
 
   

@@ -1,13 +1,12 @@
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 
-
-const Optimizer = () => {
+const Players = () => {
     return (
         <header className="App-header">
-            <h2>Optimizer Test</h2>
+            <h2>in dev</h2>
         </header>
     )
 }
 
-export default Optimizer;
+export default Players;
