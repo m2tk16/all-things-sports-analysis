@@ -18,15 +18,15 @@ code {
 
 .navbar {
   margin-bottom:1.5em;
-  background-color:rgb(57, 127, 191);
+  background-color:#1B4E5F;
 }
 
 .info-card {
   margin:1em;
   border: 1px solid #3cbc78 !important;
-  -webkit-box-shadow:0 0 10px rgb(21, 97, 57);
-  -moz-box-shadow: 0 0 10px rgb(21, 97, 57);
-  box-shadow:0 0 10px rgb(21, 97, 57);
+  -webkit-box-shadow:0 0 12px rgb(21, 97, 57);
+  -moz-box-shadow: 0 0 12px rgb(21, 97, 57);
+  box-shadow:0 0 12px rgb(21, 97, 57);
   background-color:#000 !important;
   color:#fff;
 }
@@ -169,9 +169,9 @@ code {
 }
 
 .reactor-loading-text {
-  color: rgb(21, 97, 57);
+  color: #0a576d;
   background-color: rgb(0, 0, 0);
-  font-size: 3em;
+  font-size: 2.6em;
   font-family: 'Courier New', Courier, monospace;
   text-align:center;
 }
