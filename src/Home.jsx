@@ -5,9 +5,11 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
-
+import Arc from './LoadingArc';
+import WeatherCard from './WeatherCard';
 
 const Home = () => {
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         "location": "",
         "temp": "",
@@ -29,6 +31,7 @@ const Home = () => {
             "icon": response_data.icon
         }
         setData(dict);
+        setLoading(false)
         console.log(dict);
     }
 
@@ -43,28 +46,12 @@ const Home = () => {
 
     return (
         <Row xs={1} md={2} className="g-4">
-        
-          <Col key={1}>
-            <Card className="info-card">
-              <Card.Body className="card-body">
-                <Card.Title >{data.location} | Weather<hr></hr></Card.Title>
-                <div className="weather-details-box">
-                    <Image src={data.icon} roundedCircle />
-                </div>
-                <div className="weather-details-box">
-                    <Card.Text>{data.temp}</Card.Text>
-                </div>
-                <div className="weather-details-box">
-                    <Card.Text>{data.wind_mph}</Card.Text>
-                </div>
-                <div className="weather-details-box">
-                    <Card.Text>{data.gust_mph}</Card.Text>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-     
-      </Row>
+            <Col key={1}>
+            {loading ? <Arc /> :
+                <WeatherCard data={data} />
+            }
+            </Col>
+        </Row>
     )
 }
 
