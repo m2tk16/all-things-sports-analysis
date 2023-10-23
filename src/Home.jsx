@@ -1,15 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import WeatherCard from './WeatherCard';
 
+
+
+
 const Home = () => {
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState({
+        "location": "",
+        "temp": "",
+        "wind_mph": "",
+        "guest_mph": "",
+        "icon": "",
+        "day_1": "",
+        "day_2": ""
+    })
+
+    const currentWeather = async (lat, long) => {
+        const weatherUrl = "https://w3al9qiv11.execute-api.us-west-2.amazonaws.com/default/getLocalWeather?latitude=" + lat + "&longitude=" + long
+        console.log(weatherUrl);
+        const response = await fetch(weatherUrl);
+        const response_data = await response.json();
+        console.log(response_data);
+        const dict = {
+            "location": response_data.location,
+            "temp": response_data.temp,
+            "wind_mph": response_data.wind_mph,
+            "gust_mph": response_data.gust_mph,
+            "icon": response_data.icon,
+            "day_1": response_data.seven_day.day_1,
+            "day_2": response_data.seven_day.day_2,
+            "day_3": response_data.seven_day.day_3,
+        }
+        setData(dict);
+        setLoading(false);
+        
+    }
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            console.log(lat, long);
+            currentWeather(lat, long);
+        });
+    },[]);
+
     return (
         <Row xs={1} md={2} className="g-4">
             <Col key={1}>
-                <WeatherCard />
+                <WeatherCard data={data} loading={[loading, setLoading]} />
             </Col>
         </Row>
     )

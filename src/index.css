@@ -41,7 +41,40 @@ code {
   margin-bottom:1em;
   text-align: center;
   color:#fff;
+}
+
+.seven-weather-details-box {
+  border: 1px solid #3cbc78 !important;
+  -webkit-box-shadow:0 0 7.5px rgb(21, 97, 57);
+  -moz-box-shadow: 0 0 7.5px rgb(21, 97, 57);
+  box-shadow:0 0 7.5px rgb(21, 97, 57);
+  border-radius: .12em;
+  text-align: center;
+  color:#fff;
+  font-size:.75em;
+}
+
+
+.seven-day-column {
+  width:4em;
+  color:rgb(21, 97, 57);
+  text-align:center;
   
+}
+
+.weather-row {
+  color:white;
+  text-align:center;
+  text-align:.6em;
+}
+
+.weather-header-row {
+  color:rgb(21, 97, 57);
+  font-size: 1em;
+}
+
+.info-card {
+  font-size:.85em;
 }
 
 .card-body {
@@ -60,7 +93,7 @@ code {
 
 .fullpage-wrapper {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   background: rgb(0, 0, 0);
   display: flex;
 }
