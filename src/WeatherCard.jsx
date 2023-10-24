@@ -25,10 +25,10 @@ const WeatherCard = (props: WeathercardProps) => {
                             <hr className="card-hr"></hr>
                         </Card.Title>
                         <Row xs={1} md={2} className="g-4 weather-header-row">
-                            <Col key={1} xs={2}>
+                            <Col key={1} xs={3}>
                                 Now:
                             </Col>
-                            <Col key={1} xs={10}></Col>
+                            <Col key={1} xs={9}></Col>
                         </Row>
                         <Row xs={1} md={3} className="g-4">
                             <Col key={1} xs={4}>

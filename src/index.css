@@ -27,7 +27,7 @@ code {
   -webkit-box-shadow:0 0 8px #52FEFE;
   -moz-box-shadow: 0 0 8px #52FEFE;
   box-shadow:0 0 8px #52FEFE;
-  background-color:#000 !important;
+  background-color:rgb(24, 24, 24) !important;
   color:#fff;
   margin-bottom:2em;
 }
