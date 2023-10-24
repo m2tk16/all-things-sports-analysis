@@ -25,12 +25,13 @@ const WeatherCard = (props: WeathercardProps) => {
                             <hr className="card-hr"></hr>
                         </Card.Title>
                         <Row xs={1} md={2} className="g-4 weather-header-row">
-                            <Col key={1} xs={4}>
+                            <Col key={1} xs={2}>
                                 Now:
                             </Col>
+                            <Col key={1} xs={10}></Col>
                         </Row>
                         <Row xs={1} md={3} className="g-4">
-                            <Col key={1} xs={3}>
+                            <Col key={1} xs={4}>
                                 <Image src={data.icon} roundedCircle />
                                 <div className="current-temp">{data.temp}</div>
                            </Col>
@@ -42,8 +43,10 @@ const WeatherCard = (props: WeathercardProps) => {
                                 <div className="current-weather-title">Gust MPH</div>
                                 <div className="weather-details-box">{data.gust_mph}</div>
                             </Col>
-                            <Col key={2} md={4}>
-                                <Row xs={1} md="auto" className="g-4 seven-day-header">
+                        </Row>
+                        <Row xs={1} md={3} className="g-4">
+                            <Col key={2} md={12}>
+                                <Row xs={1} md={8} className="g-4 seven-day-header">
                                     {titles.map((title, index) => (
                                     <Col className="seven-day-column" key={title} xs={3}>
                                         {title}
@@ -51,7 +54,7 @@ const WeatherCard = (props: WeathercardProps) => {
                                     ))}
                                 </Row>
                                 {Object.keys(data.seven_day).map(day => (
-                                <Row xs={1} md={2} key={day} className="g-4 weather-row">
+                                <Row xs={1} md={4} key={day} className="g-4 weather-row">
                                     {Object.keys(data.seven_day[day]).map(k => (
                                         <Col key={day+k} xs={3}>
                                             {data.seven_day[day][k]}
