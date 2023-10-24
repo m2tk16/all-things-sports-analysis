@@ -32,6 +32,7 @@ const Home = () => {
             "wind_mph": response_data.wind_mph,
             "gust_mph": response_data.gust_mph,
             "icon": response_data.icon,
+            "wind_dir": response_data.wind_dir,
             "seven_day": response_data.seven_day
         }
         setData(dict);
