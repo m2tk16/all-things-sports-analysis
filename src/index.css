@@ -23,31 +23,30 @@ code {
 
 .info-card {
   margin:1em;
-  border: 1px solid #3cbc78 !important;
-  -webkit-box-shadow:0 0 12px rgb(21, 97, 57);
-  -moz-box-shadow: 0 0 12px rgb(21, 97, 57);
-  box-shadow:0 0 12px rgb(21, 97, 57);
+  border: 1px solid #52FEFE !important;
+  -webkit-box-shadow:0 0 8px #52FEFE;
+  -moz-box-shadow: 0 0 8px #52FEFE;
+  box-shadow:0 0 8px #52FEFE;
   background-color:#000 !important;
   color:#fff;
+  margin-bottom:2em;
 }
 
 .weather-details-box {
-  border: 1px solid #3cbc78 !important;
-  -webkit-box-shadow:0 0 7.5px rgb(21, 97, 57);
-  -moz-box-shadow: 0 0 7.5px rgb(21, 97, 57);
-  box-shadow:0 0 7.5px rgb(21, 97, 57);
-  border-radius: .12em;
-  width:5em;
-  margin-bottom:1em;
-  text-align: center;
+  text-align: left;
   color:#fff;
+}
+
+.current-weather-title {
+  color:#52FEFE;
+  text-align: left;
 }
 
 .seven-weather-details-box {
   border: 1px solid #3cbc78 !important;
-  -webkit-box-shadow:0 0 7.5px rgb(21, 97, 57);
-  -moz-box-shadow: 0 0 7.5px rgb(21, 97, 57);
-  box-shadow:0 0 7.5px rgb(21, 97, 57);
+  -webkit-box-shadow:0 0 7.5px #52FEFE;
+  -moz-box-shadow: 0 0 7.5px #52FEFE;
+  box-shadow:0 0 7.5px #52FEFE;
   border-radius: .12em;
   text-align: center;
   color:#fff;
@@ -57,24 +56,27 @@ code {
 
 .seven-day-column {
   width:4em;
-  color:rgb(21, 97, 57);
-  text-align:center;
-  
+  color:#52FEFE;
+  text-align:left;
+  font-weight: 700;
 }
 
 .weather-row {
   color:white;
-  text-align:center;
+  text-align:left;
   text-align:.6em;
+  font-size:.8em;
 }
 
 .weather-header-row {
-  color:rgb(21, 97, 57);
+  color:#52FEFE;
   font-size: 1em;
+  text-align: left;
 }
 
 .info-card {
   font-size:.85em;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .card-body {
@@ -82,18 +84,27 @@ code {
 }
 
 .card-title {
-  color:#fff !important;
+  color:#0a576d !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600 !important;;
+}
+
+.current-temp {
+  color:rgb(239, 236, 236);
+  font-weight: 600;
+  font-size:1.4em;
 }
 
 .card-hr {
-  -webkit-box-shadow:0 0 7.5px rgba(60, 188, 120);
-  -moz-box-shadow: 0 0 7.5px rgba(60, 188, 120);
-  box-shadow:0 0 7.5px rgba(60, 188, 120);
+  border: solid #52FEFE 1.2px;
+  -webkit-box-shadow:0 0 7.5px #52FEFE;
+  -moz-box-shadow: 0 0 7.5px #52FEFE;
+  box-shadow:0 0 7.5px #52FEFE;
 }
 
 .fullpage-wrapper {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   background: rgb(0, 0, 0);
   display: flex;
 }

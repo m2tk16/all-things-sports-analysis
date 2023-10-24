@@ -4,7 +4,7 @@ import "@aws-amplify/ui-react/styles.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import WeatherCard from './WeatherCard';
-
+import StocksCard from './Stocks';
 
 
 
@@ -32,9 +32,7 @@ const Home = () => {
             "wind_mph": response_data.wind_mph,
             "gust_mph": response_data.gust_mph,
             "icon": response_data.icon,
-            "day_1": response_data.seven_day.day_1,
-            "day_2": response_data.seven_day.day_2,
-            "day_3": response_data.seven_day.day_3,
+            "seven_day": response_data.seven_day
         }
         setData(dict);
         setLoading(false);
@@ -54,6 +52,7 @@ const Home = () => {
         <Row xs={1} md={2} className="g-4">
             <Col key={1}>
                 <WeatherCard data={data} loading={[loading, setLoading]} />
+                <StocksCard data={data} />
             </Col>
         </Row>
     )
