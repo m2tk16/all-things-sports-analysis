@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Arc from './LoadingArc';
 
+
 interface WeathercardProps {
     data: any;
     loading: any;
@@ -29,24 +30,24 @@ const WeatherCard = (props: WeathercardProps) => {
                             <Col key={1} xs={3}>
                                 Now:
                             </Col>
-                            <Col key={1} xs={9}></Col>
+                            <Col key={2} xs={9}></Col>
                         </Row>
                         <Row xs={1} md={3} className="g-4">
-                            <Col key={1} xs={4}>
-                                <Image src={data.icon} roundedCircle />
-                                <div className="current-temp">{data.temp}&deg;</div>
-                           </Col>
                             <Col key={3} xs={4}>
-                                <div className="current-weather-title">Wind MPH</div>
-                                <div className="weather-details-box">{data.wind_mph + " " + data.wind_dir + " MPH"}</div>
-                            </Col>
+                                <Image src={data.icon} roundedCircle />
+                                <div className="current-temp">{data.temp_f}&deg;</div>
+                           </Col>
                             <Col key={4} xs={4}>
+                                <div className="current-weather-title">Wind MPH</div>
+                                <div className="weather-details-box">{data.wind_mph + " " + data.wind_dir}</div>
+                            </Col>
+                            <Col key={5} xs={4}>
                                 <div className="current-weather-title">Gust MPH</div>
-                                <div className="weather-details-box">{data.gust_mph + " " + data.wind_dir + " MPH"}</div>
+                                <div className="weather-details-box">{data.gust_mph + " " + data.wind_dir}</div>
                             </Col>
                         </Row>
                         <Row xs={1} md={3} className="g-4">
-                            <Col key={2} md={12}>
+                            <Col key={6} md={12}>
                                 <Row xs={1} className="g-3 seven-day-header">
                                     {titles.map((title, index) => (
                                     <Col className="seven-day-column" key={title} xs={3}>

@@ -28,9 +28,12 @@ const Home = () => {
         console.log(response_data);
         const dict = {
             "location": response_data.location,
-            "temp": response_data.temp,
+            "temp_f": response_data.temp_f,
+            "temp_c": response_data.temp_c,
             "wind_mph": response_data.wind_mph,
             "gust_mph": response_data.gust_mph,
+            "wind_kph": response_data.wind_kph,
+            "gust_kph": response_data.gust_kph,
             "icon": response_data.icon,
             "wind_dir": response_data.wind_dir,
             "seven_day": response_data.seven_day
@@ -52,7 +55,10 @@ const Home = () => {
     return (
         <Row xs={1} md={2} className="g-4">
             <Col key={1}>
-                <WeatherCard data={data} loading={[loading, setLoading]} />
+                <WeatherCard 
+                    data={data} 
+                    loading={[loading, setLoading]} 
+                />
                 <StocksCard data={data} />
             </Col>
         </Row>

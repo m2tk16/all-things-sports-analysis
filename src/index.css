@@ -220,3 +220,8 @@ code {
   font-family: 'Courier New', Courier, monospace;
   text-align:center;
 }
+
+.settings-toggle{
+  font-size:1.25em !important;
+  color:#fff;
+}
