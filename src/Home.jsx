@@ -16,8 +16,6 @@ const Home = () => {
         "wind_mph": "",
         "guest_mph": "",
         "icon": "",
-        "day_1": "",
-        "day_2": ""
     })
 
     const currentWeather = async (lat, long) => {

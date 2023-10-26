@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import Card from 'react-bootstrap/Card';
-import Arc from './LoadingArc';
 
 interface StocksCardProps {
     data: any;

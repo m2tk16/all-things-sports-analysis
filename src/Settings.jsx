@@ -11,42 +11,64 @@ interface SettingsProps {
     user: string;
 }
 
+
 const Settings = (props: SettingsProps) => {
     // const { user } = props;
     const user = 'm2tk16@gmail.com'
+    const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
     const [settingsData, setSettingsData] = useState({})
+
 
     useEffect(() => {
         const GetSettings = async () => {
-            const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
             const header = {
                 method: "POST",
                 headers: {
-                "Content-Type": "application/json"
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify({"login": user})
+                body: JSON.stringify({
+                    "login": user, 
+                    "request_type": "LOAD"
+                })
             }
-                
             await fetch(settingsUrl, header)
                 .then(response => response.json())
-          
                 .then(response => {
                     const data = JSON.parse(response.body)
-                    console.log(data)
                     setSettingsData(data)
                 });
             };
             GetSettings()
     },[]);
-    console.log(settingsData)
  
-    const [settings, setSettings] = useState({
-        "login": user,
-        "weather": {
-            "temperature": settingsData.temperature,
-            "speed": settingsData.speed
+
+    const UpdateSettings = (key) => {
+        const header = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "login": user, 
+                "request_type": "UPDATE",
+                "key": key,
+            })
         }
-    });
+
+        fetch(settingsUrl, header)
+            .then(response => response.json())
+            .then(response => {
+                const data = JSON.parse(response.body)
+                const d = {
+                    "login": user,
+                    "weather": {
+                        "temperature": data.temperature,
+                        "speed": data.speed
+                    }
+                }
+                setSettingsData(d.weather)
+            });
+        };
 
     
     return (
@@ -65,6 +87,7 @@ const Settings = (props: SettingsProps) => {
                                 id="custom-switch"
                                 label={settingsData.temperature}
                                 className="settings-toggle"
+                                onClick={() => UpdateSettings('temperature')}
                             />
                             <Form.Check
                                 key="weather-speed-toggle"
@@ -72,6 +95,7 @@ const Settings = (props: SettingsProps) => {
                                 id="custom-switch"
                                 label={settingsData.speed}
                                 className="settings-toggle"
+                                onClick={() => UpdateSettings('speed')}
                             />
                         </Form>
                     </Card.Body>

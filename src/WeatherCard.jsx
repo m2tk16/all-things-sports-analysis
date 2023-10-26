@@ -17,7 +17,7 @@ interface WeathercardProps {
 const WeatherCard = (props: WeathercardProps) => {
     const { data, loading } = props;
     const titles = ['Day', 'Low', 'High', '% Rain'];
-
+    console.log(data)
     return (
         <>
             {loading[0] ? <Arc /> : 
