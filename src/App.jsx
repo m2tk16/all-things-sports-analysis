@@ -6,6 +6,7 @@ import NavBar from './Navbar';
 import Home from "./Home"
 import Jarvis from "./Jarvis"
 import Settings from "./Settings"
+import ReleaseNotes from "./ReleaseNotes"
 import {
   Button,
   withAuthenticator,
@@ -32,7 +33,8 @@ const App = ({ signOut }) => {
           <Routes>
             <Route path='/' exact element={<Home />} />
             <Route path='/jarvis' element={<Jarvis />} />
-            <Route path='/settings' element={<Settings user={user} />} /> 
+            <Route path='/settings' element={<Settings user={user} />} />
+            <Route path='/updates-notes' element={<ReleaseNotes/>} /> 
           </Routes>
         </Router>
     </div>

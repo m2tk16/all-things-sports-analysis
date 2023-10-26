@@ -14,6 +14,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/settings">Settings</Nav.Link>
+            <Nav.Link href="/updates-notes">Update Notes</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

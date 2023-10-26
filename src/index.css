@@ -225,3 +225,17 @@ code {
   font-size:1em !important;
   color:#fff;
 }
+
+.release-notes-text {
+  font-size:.75em;
+  color:#fff;
+  font-weight: 400;
+  
+}
+
+.release-notes-date {
+  font-size:1em;
+  color: #52FEFE;
+  font-weight: 400;
+  padding-bottom:.5em;
+}
