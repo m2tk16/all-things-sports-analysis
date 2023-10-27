@@ -235,7 +235,20 @@ code {
 
 .release-notes-date {
   font-size:1em;
-  color: #52FEFE;
+  color: #0a576d;
   font-weight: 400;
   padding-bottom:.5em;
+}
+
+.jarvis-logo {
+  width: 3em;
+  height: 3em;
+  clip-path: circle();
+}
+
+.relase-notes-page-title {
+  text-align: center;
+  color: #52FEFE !important;
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
 }

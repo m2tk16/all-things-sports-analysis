@@ -7,15 +7,20 @@ import Card from 'react-bootstrap/Card';
 
 const ReleaseNotes = () => {
     return (
+        <>
         <Row>
-            <Col key={1} md={12}>
+            <Col key="relase-notes-page-title" md={12}>
+                <div className="relase-notes-page-title">
+                    Release Notes
+                </div>
+            </Col>
+        </Row>
+        <Row>
+            <Col key={20231025} md={12}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
-                        <Card.Title className="card-title">October Update Notes
+                        <Card.Title className="release-notes-date">2023-10-25
                             <hr className="card-hr"></hr>
-                            <Row>
-                                <Col className="release-notes-date">2023-10-25:</Col>
-                            </Row>
                             <Row>
                                 <Col className="release-notes-text">
                                     Implemented inital settings for a specific user. On the "Settings" route, a
@@ -29,6 +34,26 @@ const ReleaseNotes = () => {
                 </Card>
             </Col>
         </Row>
+        <Row>
+            <Col key={20231027} md={12}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="release-notes-date">2023-10-27
+                            <hr className="card-hr"></hr>
+                            <Row>
+                                <Col className="release-notes-text">
+                                    Updated the icon that displays in the browswer tab to a 
+                                    AI generated version of Vision / Iron man to create a
+                                    version of them combined. Also, updated the release notes
+                                    to allow mulitple cards to be displayed.
+                                </Col>
+                            </Row>
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+        </>
     )
 }
 

@@ -34,7 +34,7 @@ const App = ({ signOut }) => {
             <Route path='/' exact element={<Home />} />
             <Route path='/jarvis' element={<Jarvis />} />
             <Route path='/settings' element={<Settings user={user} />} />
-            <Route path='/updates-notes' element={<ReleaseNotes/>} /> 
+            <Route path='/release-notes' element={<ReleaseNotes user={user} />} /> 
           </Routes>
         </Router>
     </div>
