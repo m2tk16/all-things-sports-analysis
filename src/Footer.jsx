@@ -24,14 +24,15 @@ const Footer = () => {
                                 <Col key={"links"} xs={3}>
                                     <b>Links</b>
                                 </Col>    
-                                <Col key={"contact"} xs={4}>
+                                <Col key={"contact"} xs={5}>
                                     <b>Contact</b>
                                 </Col>      
                             </Row>
                             <hr className="card-hr"></hr>
                             <Row>
                                 <Col key={"padding-contact"} xs={4}>
-                                    This website is being built for learning purposes.
+                                    This website is being built for learning purposes utilized
+                                    by friends & family.
 
                                 </Col>
                                 <Col key={"home"} xs={3}>
