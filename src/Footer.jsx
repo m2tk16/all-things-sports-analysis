@@ -18,19 +18,19 @@ const Footer = () => {
                     <Card className="info-card">
                         <Card.Body className="card-body">
                             <Row>
-                                <Col key={"padding-links"} xs={3}>
+                                <Col key={"padding-links"} xs={4}>
                                     <b>About</b>
                                 </Col>    
                                 <Col key={"links"} xs={3}>
                                     <b>Links</b>
                                 </Col>    
-                                <Col key={"contact"} xs={5}>
+                                <Col key={"contact"} xs={4}>
                                     <b>Contact</b>
                                 </Col>      
                             </Row>
                             <hr className="card-hr"></hr>
                             <Row>
-                                <Col key={"padding-contact"} xs={3}>
+                                <Col key={"padding-contact"} xs={4}>
                                     This website is being built for learning purposes.
 
                                 </Col>
@@ -70,11 +70,12 @@ const Footer = () => {
                                 </Col>    
                                 <Col key={"coemialntact"} xs={5}>
                                     <Envelope />
-                                    thejarvisapp@gmail
+                                    thejarvisapp<br></br>
+                                    @gmail
                                 </Col>      
                             </Row>
                         </Card.Body>
-                    </Card>
+                    </Card>s
                 </Col>
             </Row>
         </div>
