@@ -27,7 +27,7 @@ const Players = () => {
                         <Col key={"what-is-jarvis-text"} md={12}>
                             <div className="home-card-body-text">
                                 Jarvis is a proto type tool being developed by an aspiring
-                                developer. The app is a training tool to learning various AWS,
+                                developer. The app is a training tool to learning various AWS
                                 servies, languages while having a little fun in doing so. Please
                                 leave feedback on how to improve and where there might be learning
                                 opportunities.
@@ -71,10 +71,10 @@ const Players = () => {
                             November:
                                 <ul>
                                     <li>
-                                        Implement hourly weather.
+                                        Week 44: Implement hourly weather.
                                     </li>
                                     <li>
-                                        Implement stocks.
+                                        Week 45: Implement stocks.
                                     </li>
                                 </ul>
                             </div>

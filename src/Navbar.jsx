@@ -25,7 +25,7 @@ function NavBar(props: NavBarProps) {
             <Nav.Link href={"/settings/user="+ props.user} >Settings</Nav.Link>
             <Nav.Link href="/release-notes">Release Notes</Nav.Link>
             <hr className="card-hr"></hr>
-            <Nav.Link href="/release-notes"><SignOutButton /></Nav.Link>
+            <Nav.Link href=""><SignOutButton /></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
