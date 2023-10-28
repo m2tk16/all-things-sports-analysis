@@ -17,6 +17,35 @@ const ReleaseNotes = () => {
             </Col>
         </Row>
         <Row>
+            <Col key={20231028} md={12}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="release-notes-date">2023-10-28
+                            <hr className="card-hr"></hr>
+                            <Row>
+                                <Col className="release-notes-text">
+                                    <ul>
+                                        <li>
+                                            Added the degree's character to the Low & High
+                                            fields.
+                                        </li>
+                                        <li>
+                                            Added the userName to the routes: jarvis & settings.
+                                        </li>
+                                        <li>
+                                            Updated the Home route which now displays 3 cards: 
+                                            What is The Jarvis Tool, What is the Purpose and 
+                                            a mini roadmap.
+                                        </li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+        <Row>
             <Col key={20231027} md={12}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
@@ -26,9 +55,8 @@ const ReleaseNotes = () => {
                                 <Col className="release-notes-text">
                                     <ul>
                                         <li>
-                                            Updated the icon that displays in the browswer tab to a 
-                                            AI generated version of Vision / Iron man to create a
-                                            version of them combined.
+                                            Updated the icon that displays in the browser tab to an 
+                                            AI generated combined version of Vision / Iron.
                                         </li> 
                                         <li>
                                             Updated the release notes

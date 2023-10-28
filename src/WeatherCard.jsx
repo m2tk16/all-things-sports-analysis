@@ -18,6 +18,16 @@ const WeatherCard = (props: WeathercardProps) => {
     const { data, loading } = props;
     const titles = ['Day', 'Low', 'High', 'Rain'];
 
+    const getKeyValueSymbols = (key, day, data) => {
+        if (key.substring(4,8) === "temp") {
+            return data.seven_day[day][key] + '\u00b0'
+        } else if (key === "chance_of_rain") {
+            return data.seven_day[day][key] + "%"
+        } else {
+            return data.seven_day[day][key]
+        }
+    }
+
     return (
         <>
             {loading[0] ? <Arc /> : 
@@ -27,10 +37,10 @@ const WeatherCard = (props: WeathercardProps) => {
                             <hr className="card-hr"></hr>
                         </Card.Title>
                         <Row xs={1} md={2} className="g-4 weather-header-row">
-                            <Col key={1} xs={3}>
+                            <Col key={1} xs={7}>
                                 Now:
                             </Col>
-                            <Col key={2} xs={9}></Col>
+                            <Col key={2} xs={5}></Col>
                         </Row>
                         <Row xs={1} md={3} className="g-4">
                             <Col key={3} xs={4}>
@@ -46,6 +56,9 @@ const WeatherCard = (props: WeathercardProps) => {
                                 <div className="weather-details-box">{data.gust_mph + " " + data.wind_dir}</div>
                             </Col>
                         </Row>
+                        <Row xs={1} md={12}>
+                            <div className="weather-header-row">Three day outlook</div>
+                        </Row>
                         <Row xs={1} md={3} className="g-4">
                             <Col key={6} md={12}>
                                 <Row xs={1} className="g-3 seven-day-header">
@@ -59,7 +72,7 @@ const WeatherCard = (props: WeathercardProps) => {
                                 <Row xs={1} key={day} className="g-3 weather-row">
                                     {Object.keys(data.seven_day[day]).map(k => (
                                         <Col key={day+k} xs={3}>
-                                            {data.seven_day[day][k]}
+                                            {getKeyValueSymbols(k, day, data)}
                                         </Col>
                                     ))} 
                                 </Row>

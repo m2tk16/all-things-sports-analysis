@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-
+import SettingsForm from './SettingsForm';
 
 interface SettingsProps {
     user: string;
@@ -13,13 +13,14 @@ interface SettingsProps {
 
 
 const Settings = (props: SettingsProps) => {
-    // const { user } = props;
-    const user = 'm2tk16@gmail.com'
+    const { user } = props;
+    // const user = 'm2tk16@gmail.com'
     const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
     const [settingsData, setSettingsData] = useState({})
 
 
     useEffect(() => {
+        console.log(props.user)
         const GetSettings = async () => {
             const header = {
                 method: "POST",
@@ -27,7 +28,7 @@ const Settings = (props: SettingsProps) => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "login": user, 
+                    "login": props.user, 
                     "request_type": "LOAD"
                 })
             }
@@ -39,7 +40,7 @@ const Settings = (props: SettingsProps) => {
                 });
             };
             GetSettings()
-    },[]);
+    },[props.user]);
  
 
     const UpdateSettings = (key) => {
@@ -73,6 +74,10 @@ const Settings = (props: SettingsProps) => {
 
     
     return (
+        <>
+        <Row>
+            <SettingsForm />
+        </Row>
         <Row>
             <Col>
                 <Card className="info-card">
@@ -114,6 +119,7 @@ const Settings = (props: SettingsProps) => {
                 </Card>
             </Col>
         </Row>
+        </>
     )
 }
 

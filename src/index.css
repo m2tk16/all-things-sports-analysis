@@ -29,7 +29,7 @@ code {
   box-shadow:0 0 8px #52FEFE;
   background-color:rgb(24, 24, 24) !important;
   color:#fff;
-  margin-bottom:2em;
+  margin-bottom:1em;
 }
 
 .weather-details-box {
@@ -255,8 +255,25 @@ code {
 
 .Sign-out-link {
   color:#fff;
+  font-size:1em;
 }
 
 .nav-user-name {
   color: #52FEFE !important;
+}
+
+.home-header {
+  color: #52FEFE;
+}
+
+.home-card-body-text {
+  color:#fff !important;
+  margin: 0em 1em 1em 1em;
+}
+
+.home-title {
+  color: #52FEFE;
+  text-align: center;
+  font-size:2em;
+  padding-bottom: .5em;
 }

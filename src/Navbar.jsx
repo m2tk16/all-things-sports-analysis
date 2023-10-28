@@ -21,11 +21,11 @@ function NavBar(props: NavBarProps) {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/jarvis">Jarvis</Nav.Link>
-            <Nav.Link href="/settings">Settings</Nav.Link>
+            <Nav.Link href={"/jarvis/user="+ props.user}>Jarvis</Nav.Link>
+            <Nav.Link href={"/settings/user="+ props.user} >Settings</Nav.Link>
             <Nav.Link href="/release-notes">Release Notes</Nav.Link>
             <hr className="card-hr"></hr>
-            <SignOutButton />
+            <Nav.Link href="/release-notes"><SignOutButton /></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
