@@ -37,6 +37,14 @@ const ReleaseNotes = () => {
                                             What is The Jarvis Tool, What is the Purpose and 
                                             a mini roadmap.
                                         </li>
+                                        <li>
+                                            Removed the stock settings placement card in favor of
+                                            the first name card.
+                                        </li>
+                                        <li>
+                                            Replaced the hardcoded personal email for the welcome
+                                            logo, to the actual logged in user.
+                                        </li>
                                     </ul>
                                 </Col>
                             </Row>

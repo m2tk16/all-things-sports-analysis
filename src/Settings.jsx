@@ -14,7 +14,6 @@ interface SettingsProps {
 
 const Settings = (props: SettingsProps) => {
     const { user } = props;
-    // const user = 'm2tk16@gmail.com'
     const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
     const [settingsData, setSettingsData] = useState({})
 
@@ -76,10 +75,18 @@ const Settings = (props: SettingsProps) => {
     return (
         <>
         <Row>
-            <SettingsForm />
-        </Row>
-        <Row>
-            <Col>
+            <Col key={"fist-name"} sm={3}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="card-title">
+                            First name
+                            <hr className="card-hr"></hr>
+                        </Card.Title>
+                        <SettingsForm />
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col key={"weather-settings-col"} sm={3}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
                         <Card.Title className="card-title">
@@ -104,17 +111,6 @@ const Settings = (props: SettingsProps) => {
                                 onClick={() => UpdateSettings('speed')}
                             />
                         </Form>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col>
-                <Card className="info-card">
-                    <Card.Body className="card-body">
-                        <Card.Title className="card-title">
-                            Stock Settings
-                            <hr className="card-hr"></hr>
-                        </Card.Title>
-                        Stock settings
                     </Card.Body>
                 </Card>
             </Col>
