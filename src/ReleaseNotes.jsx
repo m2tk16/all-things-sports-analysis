@@ -4,7 +4,7 @@ import "@aws-amplify/ui-react/styles.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-
+import Footer from "./Footer"
 
 const ReleaseNotes = () => {
     return (
@@ -44,6 +44,10 @@ const ReleaseNotes = () => {
                                         <li>
                                             Replaced the hardcoded personal email for the welcome
                                             logo, to the actual logged in user.
+                                        </li>
+                                        <li>
+                                            Added contact email as well as the route links, 
+                                            in the footer, for all routes.
                                         </li>
                                     </ul>
                                 </Col>
@@ -106,6 +110,7 @@ const ReleaseNotes = () => {
                 </Card>
             </Col>
         </Row>
+        <Footer />
         </>
     )
 }

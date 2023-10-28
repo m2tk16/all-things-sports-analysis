@@ -15,7 +15,7 @@ function NavBar(props: NavBarProps) {
       sticky="top"
     >
       <Container>
-        <Navbar.Brand href="/jarvis"><img className="jarvis-logo" src="/jarvis.png" alt="jarvis-head" /></Navbar.Brand>
+        <Navbar.Brand href={"/jarvis/user="+ props.user}><img className="jarvis-logo" src="/jarvis.png" alt="jarvis-head" /></Navbar.Brand>
         <div className="nav-user-name">Welcome, {props.user}!</div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

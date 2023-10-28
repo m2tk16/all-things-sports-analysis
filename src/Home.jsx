@@ -4,6 +4,8 @@ import "@aws-amplify/ui-react/styles.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
+import Footer from "./Footer"
+
 
 const Players = () => {
     return (
@@ -11,7 +13,7 @@ const Players = () => {
         <Row>
             <Col key={"what-is-jarvis-title"} md={12}>
                 <div className="home-title">
-                    About The Jarvis App
+                    The Jarvis Protocol
                 </div>
             </Col>
         </Row>
@@ -76,6 +78,9 @@ const Players = () => {
                                     <li>
                                         Week 45: Implement stocks.
                                     </li>
+                                    <li>
+                                        Week 45: Implement ability to update stock tickers.
+                                    </li>
                                 </ul>
                             </div>
                         </Col>
@@ -83,6 +88,7 @@ const Players = () => {
                 </Card>
             </Col>
         </Row>
+        <Footer />
         </>
     )
 }

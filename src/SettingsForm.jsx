@@ -1,7 +1,6 @@
 import Form from 'react-bootstrap/Form';
 
 
-
 function SettingsForm() {
   return (
     <div className="settings-form-card">

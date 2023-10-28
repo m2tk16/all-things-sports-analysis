@@ -80,7 +80,7 @@ code {
 }
 
 .card-body {
-  color:#fff;
+  color:#fff !important;
 }
 
 .card-title {
@@ -280,4 +280,17 @@ code {
 
 .settings-form-card {
   padding-top:1.5em;
+}
+
+.footer-line {
+  display:inline-block;
+}
+
+.footer-wrapper {
+  font-size:.75em;
+}
+
+.footer-link {
+  text-decoration: none !important;
+  color: #fff
 }

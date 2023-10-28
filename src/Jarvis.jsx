@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import WeatherCard from './WeatherCard';
 import StocksCard from './Stocks';
+import Footer from "./Footer"
 
 
 
@@ -50,6 +51,7 @@ const Home = () => {
     },[]);
 
     return (
+        <>
         <Row xs={1} md={2} className="g-4">
             <Col key={1}>
                 <WeatherCard 
@@ -59,6 +61,10 @@ const Home = () => {
                 <StocksCard data={data} />
             </Col>
         </Row>
+        <Row>
+            <Footer />
+        </Row>
+        </>
     )
 }
 
