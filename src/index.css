@@ -252,3 +252,11 @@ code {
   font-size: 2em;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.Sign-out-link {
+  color:#fff;
+}
+
+.nav-user-name {
+  color: #52FEFE !important;
+}
