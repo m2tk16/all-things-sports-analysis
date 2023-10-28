@@ -21,7 +21,7 @@ const Players = () => {
             <Col key={"what-is-jarvis-title"} md={6}>
                 <Card className="info-card info-card-home">
                     <Card.Body className="card-body">
-                            <Card.Title className="card-title">What is the Jarvis App?
+                            <Card.Title className="card-title">What is the Jarvis Protocol?
                                 <hr className="card-hr"></hr>
                             </Card.Title>
                     </Card.Body>
@@ -30,7 +30,7 @@ const Players = () => {
                             <div className="home-card-body-text">
                                 Jarvis is a proto type tool being developed by an aspiring
                                 developer. The app is a training tool to learning various AWS
-                                servies, languages while having a little fun in doing so. Please
+                                servies and languages while having a little fun in doing so. Please
                                 leave feedback on how to improve and where there might be learning
                                 opportunities.
                             </div>
