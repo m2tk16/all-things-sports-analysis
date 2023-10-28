@@ -30,7 +30,7 @@ const Players = () => {
                             <div className="home-card-body-text">
                                 Jarvis is a proto type tool being developed by an aspiring
                                 developer. The app is a training tool to learning various AWS
-                                servies and languages while having a little fun in doing so. Please
+                                services and languages while having a little fun in doing so. Please
                                 leave feedback on how to improve and where there might be learning
                                 opportunities.
                             </div>
