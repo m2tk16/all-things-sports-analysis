@@ -26,7 +26,7 @@ const ReleaseNotes = () => {
                                 <Col className="release-notes-text">
                                     <ul>
                                         <li>
-                                            Added the degree's character to the Low & High
+                                            Added the degree character to the Low & High
                                             fields.
                                         </li>
                                         <li>
