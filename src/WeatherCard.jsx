@@ -36,6 +36,22 @@ const WeatherCard = (props: WeathercardProps) => {
         }
     }
 
+    const wind = (data) => {
+        if (data.weather_settings.speed === 'MPH') {
+            return data.wind_mph
+        } else {
+            return data.wind_kph
+        }
+    }
+
+    const gust = (data) => {
+        if (data.weather_settings.speed === 'MPH') {
+            return data.gust_mph
+        } else {
+            return data.gust_kph
+        }
+    }
+
     return (
         <>
             {loading[0] ? <Arc /> : 
@@ -56,12 +72,12 @@ const WeatherCard = (props: WeathercardProps) => {
                                 <div className="current-temp">{temp(data)}&deg;</div>
                            </Col>
                             <Col key={4} xs={4}>
-                                <div className="current-weather-title">Wind MPH</div>
-                                <div className="weather-details-box">{data.wind_mph + " " + data.wind_dir}</div>
+                                <div className="current-weather-title">Wind {data.weather_settings.speed}</div>
+                                <div className="weather-details-box">{wind(data) + " " + data.wind_dir}</div>
                             </Col>
                             <Col key={5} xs={4}>
-                                <div className="current-weather-title">Gust MPH</div>
-                                <div className="weather-details-box">{data.gust_mph + " " + data.wind_dir}</div>
+                                <div className="current-weather-title">Gust {data.weather_settings.speed}</div>
+                                <div className="weather-details-box">{gust(data) + " " + data.wind_dir}</div>
                             </Col>
                         </Row>
                         <Row xs={1} md={12}>
