@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import SettingsForm from './SettingsForm';
 
 interface SettingsProps {
@@ -15,11 +16,11 @@ interface SettingsProps {
 const Settings = (props: SettingsProps) => {
     const { user } = props;
     const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
+    const firstNameUrl = "https://t2s5cjehp3.execute-api.us-west-2.amazonaws.com/dev/updateJarvisFirstName"
     const [settingsData, setSettingsData] = useState({})
 
 
     useEffect(() => {
-        console.log(props.user)
         const GetSettings = async () => {
             const header = {
                 method: "POST",
@@ -71,6 +72,20 @@ const Settings = (props: SettingsProps) => {
         };
 
 
+    const updateFirstName = (user, FirstName) => {
+        const header = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "login": user, 
+                "first_name": FirstName
+            })
+        }
+        fetch(firstNameUrl, header)
+        };
+
     
     return (
         <>
@@ -82,7 +97,14 @@ const Settings = (props: SettingsProps) => {
                             First name
                             <hr className="card-hr"></hr>
                         </Card.Title>
-                        <SettingsForm />
+                        <Row md={3}>
+                            <Col key={"settings-form"} xs={8}>
+                                <SettingsForm />
+                            </Col>
+                            <Col key={"first-name-button"} className="first-name-button" xs={4}>
+                                <Button variant="outline-info" onClick={updateFirstName(user, "Marty")}>Update</Button>
+                            </Col>
+                        </Row>
                     </Card.Body>
                 </Card>
             </Col>

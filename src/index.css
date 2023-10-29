@@ -294,3 +294,7 @@ code {
   text-decoration: none !important;
   color: #fff
 }
+
+.first-name-button {
+  padding-top: 1.5em;
+}
