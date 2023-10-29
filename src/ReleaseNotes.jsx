@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Footer from "./Footer"
 
+
 const ReleaseNotes = () => {
     return (
         <>
@@ -14,6 +15,27 @@ const ReleaseNotes = () => {
                 <div className="relase-notes-page-title">
                     Release Notes
                 </div>
+            </Col>
+        </Row>
+        <Row>
+            <Col key={20231029} md={12}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="release-notes-date">2023-10-29
+                            <hr className="card-hr"></hr>
+                            <Row>
+                                <Col className="release-notes-text">
+                                    <ul>
+                                        <li>
+                                            Implemented the F/H MPH/KPH toggle which is loaded 
+                                            from the weather settings on the Jarvis Route.
+                                        </li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
             </Col>
         </Row>
         <Row>

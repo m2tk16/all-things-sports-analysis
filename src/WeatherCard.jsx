@@ -28,6 +28,14 @@ const WeatherCard = (props: WeathercardProps) => {
         }
     }
 
+    const temp = (data) => {
+        if (data.weather_settings.temperature === 'Fahrenheit') {
+            return data.temp_f
+        } else {
+            return data.temp_c
+        }
+    }
+
     return (
         <>
             {loading[0] ? <Arc /> : 
@@ -45,7 +53,7 @@ const WeatherCard = (props: WeathercardProps) => {
                         <Row xs={1} md={3} className="g-4">
                             <Col key={3} xs={4}>
                                 <Image src={data.icon} roundedCircle />
-                                <div className="current-temp">{data.temp_f}&deg;</div>
+                                <div className="current-temp">{temp(data)}&deg;</div>
                            </Col>
                             <Col key={4} xs={4}>
                                 <div className="current-weather-title">Wind MPH</div>

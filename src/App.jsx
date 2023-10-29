@@ -28,7 +28,7 @@ const App = ({ signOut }) => {
           <NavBar user={userName}/>
           <Routes>
             <Route path='/' exact element={<Home />} />
-            <Route path={"/jarvis/user="+ userName} element={<Jarvis />} />
+            <Route path={"/jarvis/user="+ userName} element={<Jarvis user={user} />} />
             <Route path={"/settings/user="+ userName} element={<Settings user={user} />} />
             <Route path='/release-notes' element={<ReleaseNotes user={user} />} /> 
           </Routes>

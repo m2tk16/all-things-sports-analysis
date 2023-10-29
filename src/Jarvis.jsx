@@ -7,9 +7,13 @@ import WeatherCard from './WeatherCard';
 import StocksCard from './Stocks';
 import Footer from "./Footer"
 
+interface JarvisProps {
+    user: string;
+}
 
 
-const Home = () => {
+const Jarvis = (props: JarvisProps) => {
+    const { user } = props;
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         "location": "",
@@ -20,7 +24,8 @@ const Home = () => {
     })
 
     const currentWeather = async (lat, long) => {
-        const weatherUrl = "https://w3al9qiv11.execute-api.us-west-2.amazonaws.com/default/getLocalWeather?latitude=" + lat + "&longitude=" + long
+        const endPointURl = "?latitude=" + lat + "&longitude=" + long + "&user=" + user;
+        const weatherUrl = "https://w3al9qiv11.execute-api.us-west-2.amazonaws.com/default/getLocalWeather" + endPointURl
         console.log(weatherUrl);
         const response = await fetch(weatherUrl);
         const response_data = await response.json();
@@ -35,7 +40,8 @@ const Home = () => {
             "gust_kph": response_data.gust_kph,
             "icon": response_data.icon,
             "wind_dir": response_data.wind_dir,
-            "seven_day": response_data.seven_day
+            "seven_day": response_data.seven_day,
+            "weather_settings": response_data.weather_settings
         }
         setData(dict);
         setLoading(false);
@@ -68,4 +74,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Jarvis;

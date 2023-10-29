@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Footer from "./Footer"
 
 
-const Players = () => {
+const Home = () => {
     return (
         <>
         <Row>
@@ -18,7 +18,7 @@ const Players = () => {
             </Col>
         </Row>
         <Row xs={1} md={3} className="g-4">
-            <Col key={"what-is-jarvis-title"} md={6}>
+            <Col key={"what-is-jarvis-text"} md={6}>
                 <Card className="info-card info-card-home">
                     <Card.Body className="card-body">
                             <Card.Title className="card-title">What is the Jarvis Protocol?
@@ -93,4 +93,4 @@ const Players = () => {
     )
 }
 
-export default Players;
+export default Home;
