@@ -298,3 +298,9 @@ code {
 .first-name-button {
   padding-top: 1.5em;
 }
+
+.setings-update-toast {
+  background-color: #0a576d !important;
+  color: white !important;
+  margin:1em;
+}

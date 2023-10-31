@@ -18,6 +18,31 @@ const ReleaseNotes = () => {
             </Col>
         </Row>
         <Row>
+            <Col key={20231030} md={12}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="release-notes-date">2023-10-29
+                            <hr className="card-hr"></hr>
+                            <Row>
+                                <Col className="release-notes-text">
+                                    <ul>
+                                        <li>
+                                            Updated the Settings route to now have a toast
+                                            generate at the top of the page informating the
+                                            user that their first name as been updated.
+                                        </li>
+                                        <li>
+                                            Some minor formatting to allow the changes above.
+                                        </li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+        <Row>
             <Col key={20231029} md={12}>
                 <Card className="info-card">
                     <Card.Body className="card-body">

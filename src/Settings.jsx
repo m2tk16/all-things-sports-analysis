@@ -6,19 +6,27 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import SettingsForm from './SettingsForm';
+import Toast from 'react-bootstrap/Toast';
+
+
 
 interface SettingsProps {
-    user: string;
+    user: string
 }
 
 
 const Settings = (props: SettingsProps) => {
     const { user } = props;
+
     const settingsUrl = "https://q0ll8gvj51.execute-api.us-west-2.amazonaws.com/GetJarvisSettings/getJarvisUserSettings"
     const firstNameUrl = "https://t2s5cjehp3.execute-api.us-west-2.amazonaws.com/dev/updateJarvisFirstName"
     const [settingsData, setSettingsData] = useState({})
+    const [showUpdateToast, setShowUpdateToast] = useState(false)
+    const [firstName, setFirstName] = useState("")
 
+    const closeToast = () => {
+        setShowUpdateToast(false)
+    }
 
     useEffect(() => {
         const GetSettings = async () => {
@@ -72,7 +80,7 @@ const Settings = (props: SettingsProps) => {
         };
 
 
-    const updateFirstName = (user, FirstName) => {
+    const updateFirstName = (user, firstName) => {
         const header = {
             method: "POST",
             headers: {
@@ -80,35 +88,75 @@ const Settings = (props: SettingsProps) => {
             },
             body: JSON.stringify({
                 "login": user, 
-                "first_name": FirstName
+                "first_name": firstName
             })
         }
         fetch(firstNameUrl, header)
+        setShowUpdateToast(true);
         };
 
     
     return (
         <>
         <Row>
-            <Col key={"fist-name"} sm={3}>
+            <Col key={"update-toast"} sm={12}>
+                <Toast 
+                    className="setings-update-toast"
+                    autohide="true" 
+                    bg="custom" 
+                    animation="true" 
+                    show={showUpdateToast}
+                    onClose={closeToast}
+                >
+                    <Toast.Header>
+                        <strong className="me-auto">SUCCESS</strong>
+                    </Toast.Header>
+                    <Toast.Body>
+                        Congrats, {firstName}! You have successfully updated your first name
+                    </Toast.Body>
+                </Toast>
+            </Col>
+        </Row>
+        <Row>
+            <Col key={"fist-name"} sm={6}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
-                        <Card.Title className="card-title">
-                            First name
-                            <hr className="card-hr"></hr>
-                        </Card.Title>
-                        <Row md={3}>
-                            <Col key={"settings-form"} xs={8}>
-                                <SettingsForm />
-                            </Col>
-                            <Col key={"first-name-button"} className="first-name-button" xs={4}>
-                                <Button variant="outline-info" onClick={updateFirstName(user, "Marty")}>Update</Button>
-                            </Col>
-                        </Row>
+                        <Form>
+                            <Card.Title className="card-title">
+                                <Row>
+                                    <Col xs={8}>
+                                        First name
+                                    </Col>
+                                    <Col xs={4}>
+                                        <Button 
+                                            variant="outline-info" 
+                                            onClick={() => updateFirstName(user, firstName)}
+                                        >Update
+                                        </Button>
+                                    </Col>
+                                </Row>
+                                <hr className="card-hr"></hr>
+                            </Card.Title>
+                            <Row lg={3}>
+                                <Col key={"settings-form"} md={12}>
+                                    <Form.Group 
+                                        className="mb-3" 
+                                        controlId="exampleForm.ControlInput1">
+                                    <Form.Control 
+                                        size="small" 
+                                        type="text" 
+                                        placeholder="Jarvis"
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                        />
+                                    </Form.Group>
+
+                                </Col>
+                            </Row>
+                        </Form>
                     </Card.Body>
                 </Card>
             </Col>
-            <Col key={"weather-settings-col"} sm={3}>
+            <Col key={"weather-settings-col"} sm={6}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
                         <Card.Title className="card-title">
