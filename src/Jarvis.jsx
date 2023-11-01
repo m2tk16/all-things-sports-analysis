@@ -26,10 +26,8 @@ const Jarvis = (props: JarvisProps) => {
     const currentWeather = async (lat, long) => {
         const endPointURl = "?latitude=" + lat + "&longitude=" + long + "&user=" + user;
         const weatherUrl = "https://w3al9qiv11.execute-api.us-west-2.amazonaws.com/default/getLocalWeather" + endPointURl
-        console.log(weatherUrl);
         const response = await fetch(weatherUrl);
         const response_data = await response.json();
-        console.log(response_data);
         const dict = {
             "location": response_data.location,
             "temp_f": response_data.temp_f,
@@ -64,7 +62,7 @@ const Jarvis = (props: JarvisProps) => {
                     data={data} 
                     loading={[loading, setLoading]} 
                 />
-                <StocksCard data={data} />
+                <StocksCard />
             </Col>
         </Row>
         <Row>
