@@ -304,3 +304,14 @@ code {
   color: white !important;
   margin:1em;
 }
+
+.stock-item {
+  background-color: rgb(24, 24, 24) !important;
+  color: white !important;
+}
+
+.accordion-button {
+  background-color: rgb(24, 24, 24) !important;
+  color: white !important;
+  height: 1em;
+}

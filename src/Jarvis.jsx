@@ -4,7 +4,7 @@ import "@aws-amplify/ui-react/styles.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import WeatherCard from './WeatherCard';
-import StocksCard from './Stocks';
+import StocksCard from './StocksCard';
 import Footer from "./Footer"
 
 interface JarvisProps {
