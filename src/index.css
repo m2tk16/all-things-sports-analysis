@@ -305,13 +305,20 @@ code {
   margin:1em;
 }
 
-.stock-item {
-  background-color: rgb(24, 24, 24) !important;
-  color: white !important;
-}
 
 .accordion-button {
   background-color: rgb(24, 24, 24) !important;
   color: white !important;
-  height: 1em;
+  height: 3em;
+}
+
+.stock-ticker {
+  color: #0a576d;
+  font-weight: 600;
+}
+
+.stock-name {
+  font-size: .6em;
+  text-align: left;
+  color: #fff;
 }

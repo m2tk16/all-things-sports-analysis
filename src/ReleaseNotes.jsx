@@ -18,6 +18,31 @@ const ReleaseNotes = () => {
             </Col>
         </Row>
         <Row>
+            <Col key={20231101} md={12}>
+                <Card className="info-card">
+                    <Card.Body className="card-body">
+                        <Card.Title className="release-notes-date">2023-11-01
+                            <hr className="card-hr"></hr>
+                            <Row>
+                                <Col className="release-notes-text">
+                                    <ul>
+                                        <li>
+                                            Reformatted the stock tickers to include the stock ticker,
+                                            company name, price and various other metrics.
+                                        </li>
+                                        <li>
+                                            Added conditional formatting based on % change for the current
+                                            day. 
+                                        </li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+        <Row>
             <Col key={20231031} md={12}>
                 <Card className="info-card">
                     <Card.Body className="card-body">
